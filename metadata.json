@@ -1,0 +1,6 @@
+{
+  "name": "Bibi's Treats",
+  "description": "Cute pastel-blue online bakery storefront and order management system with inventory control, image management, sales analytics, and Google Drive & Sheets integration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bibi's Treats — Sweet treats, happy hearts ♡</title>
+    <meta
+      name="description"
+      content="ร้านขนมโฮมเมดออนไลน์ Bibi's Treats สั่งขนมสดใหม่ เลือกเมนู จัดการตะกร้า ตรวจสอบสถานะออเดอร์ พร้อมระบบหลังบ้านครบวงจร"
+    />
+    <meta property="og:title" content="Bibi's Treats — Sweet treats, happy hearts ♡" />
+    <meta
+      property="og:description"
+      content="ร้านขนมโฮมเมดออนไลน์ Bibi's Treats สั่งขนมสดใหม่ เลือกเมนู จัดการตะกร้า ตรวจสอบสถานะออเดอร์ พร้อมระบบหลังบ้านครบวงจร"
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=Prompt:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('bibis_theme');
+          var prefersDark =
+            window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (saved === 'dark' || (!saved && prefersDark)) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-[#F8FBFF] text-[#1E3A5F] dark:bg-[#0D1726] dark:text-[#EDF5FF] antialiased selection:bg-[#CFE8FF] selection:text-[#163252] dark:selection:bg-[#2A4C73] dark:selection:text-[#EDF5FF]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

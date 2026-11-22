@@ -1,0 +1,461 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Fraunces", "Prompt", Georgia, serif;
+  --font-sans: "Prompt", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-pastel-canvas: #F8FBFF;
+  --color-pastel-cream: #FFFDF8;
+  --color-pastel-ice: #EDF6FF;
+  --color-pastel-baby: #D6ECFF;
+  --color-pastel-sky: #7CC0F5;
+  --color-pastel-primary: #3B89CC;
+  --color-pastel-primary-hover: #2E76B6;
+  --color-pastel-ink: #1C3554;
+  --color-pastel-muted: #567394;
+}
+
+@layer base {
+  html,
+  body {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    background-color: #F8FBFF;
+    color: #1C3554;
+    overflow-x: clip;
+    -webkit-text-size-adjust: 100%;
+    transition: background-color 180ms ease, color 180ms ease;
+  }
+
+  html.dark,
+  html.dark body {
+    background-color: #0D1726;
+    color: #EDF5FF;
+    color-scheme: dark;
+  }
+
+  h1, h2, h3, .font-display {
+    text-wrap: balance;
+    overflow-wrap: break-word;
+  }
+
+  p, span, li {
+    overflow-wrap: break-word;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Official Sign in with Google button styling */
+.gsi-material-button {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #c7d9ec;
+  border-radius: 14px;
+  box-sizing: border-box;
+  color: #1f1f1f;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  height: 44px;
+  letter-spacing: 0.15px;
+  outline: none;
+  overflow: hidden;
+  padding: 0 16px;
+  position: relative;
+  text-align: center;
+  transition: background-color 180ms cubic-bezier(0.16, 1, 0.3, 1), border-color 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  vertical-align: middle;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gsi-material-button:hover:not(:disabled) {
+  background-color: #f4f9ff;
+  border-color: #8cc2f0;
+  box-shadow: 0 4px 14px rgba(59, 137, 204, 0.14);
+}
+
+.gsi-material-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.gsi-material-button .gsi-material-button-content-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 100%;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  gap: 10px;
+}
+
+.gsi-material-button .gsi-material-button-icon {
+  height: 20px;
+  width: 20px;
+  min-width: 20px;
+}
+
+html.dark .gsi-material-button {
+  background-color: #182940;
+  border-color: #324F73;
+  color: #EDF5FF;
+}
+
+html.dark .gsi-material-button:hover:not(:disabled) {
+  background-color: #203654;
+  border-color: #6CB8F6;
+  box-shadow: 0 4px 16px rgba(108, 184, 246, 0.18);
+}
+
+/* Soft cloud shadow for bakery cards */
+.bakery-card {
+  background: #ffffff;
+  border: 1px solid #E1EFFB;
+  box-shadow: 0 10px 30px -14px rgba(59, 137, 204, 0.16);
+}
+
+.bakery-card-hover {
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bakery-card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px -14px rgba(59, 137, 204, 0.24);
+}
+
+html.dark .bakery-card {
+  background: #142236;
+  border-color: #243B59;
+  box-shadow: 0 12px 32px -14px rgba(0, 6, 18, 0.65);
+}
+
+html.dark .bakery-card-hover:hover {
+  box-shadow: 0 18px 38px -14px rgba(0, 6, 18, 0.8), 0 0 0 1px rgba(108, 184, 246, 0.16);
+}
+
+/* Subtle polka-dot pastel pattern for hero & order success accents */
+.bg-bakery-dots {
+  background-image: radial-gradient(rgba(92, 169, 230, 0.18) 1.25px, transparent 1.25px);
+  background-size: 20px 20px;
+}
+
+html.dark .bg-bakery-dots {
+  background-image: radial-gradient(rgba(124, 192, 245, 0.16) 1.25px, transparent 1.25px);
+}
+
+/* ==========================================================================
+   MIDNIGHT PASTEL BLUE DARK MODE — COHESIVE SURFACE & TYPOGRAPHY SYSTEM
+   ========================================================================== */
+
+/* Page canvases */
+html.dark .bg-\[\#F8FBFF\],
+html.dark .bg-\[\#F6FAFF\] {
+  background-color: #0D1726;
+}
+
+/* Primary elevated surfaces & cards */
+html.dark .bg-white {
+  background-color: #142236;
+}
+
+html.dark .bg-white\/95 {
+  background-color: rgba(20, 34, 54, 0.94);
+}
+
+html.dark .bg-white\/92 {
+  background-color: rgba(15, 27, 43, 0.92);
+}
+
+html.dark .hover\:bg-white:hover,
+html.dark .focus\:bg-white:focus {
+  background-color: #1B2E48;
+}
+
+/* Inset soft pastel surfaces */
+html.dark .bg-\[\#F9FCFF\],
+html.dark .bg-\[\#F7FBFF\],
+html.dark .bg-\[\#F5FAFF\],
+html.dark .bg-\[\#F4F9FF\],
+html.dark .bg-\[\#F3F9FF\],
+html.dark .bg-\[\#F2F8FF\],
+html.dark .bg-\[\#F1F8FF\],
+html.dark .bg-\[\#F1F7FD\],
+html.dark .bg-\[\#F0F8FF\],
+html.dark .bg-\[\#EEF3F8\] {
+  background-color: #182940;
+}
+
+/* Secondary pastel blue accents & soft buttons */
+html.dark .bg-\[\#EFF7FF\],
+html.dark .bg-\[\#EDF6FF\],
+html.dark .bg-\[\#EAF5FF\],
+html.dark .bg-\[\#EAF4FD\],
+html.dark .bg-\[\#E8F2FC\],
+html.dark .bg-\[\#E7F4FF\],
+html.dark .bg-\[\#E7F3FF\],
+html.dark .bg-\[\#E6F3FF\],
+html.dark .bg-\[\#E5F3FF\],
+html.dark .bg-\[\#E4F3FF\],
+html.dark .bg-\[\#E4F2FF\],
+html.dark .bg-\[\#E3F2FF\],
+html.dark .bg-\[\#E2F0FC\],
+html.dark .bg-\[\#E2EFFB\],
+html.dark .bg-\[\#E1F0FE\],
+html.dark .bg-\[\#DFEEFE\],
+html.dark .bg-\[\#DFEEFB\],
+html.dark .bg-\[\#D7ECFF\],
+html.dark .bg-\[\#D5ECFF\] {
+  background-color: #1F3553;
+}
+
+html.dark .hover\:bg-\[\#F7FBFF\]:hover,
+html.dark .hover\:bg-\[\#F5FAFF\]:hover,
+html.dark .hover\:bg-\[\#F3F9FF\]:hover,
+html.dark .hover\:bg-\[\#F0F8FF\]:hover,
+html.dark .hover\:bg-\[\#EFF7FF\]:hover,
+html.dark .hover\:bg-\[\#EAF5FF\]:hover,
+html.dark .hover\:bg-\[\#E7F3FF\]:hover,
+html.dark .hover\:bg-\[\#E5F3FF\]:hover,
+html.dark .hover\:bg-\[\#E4F2FF\]:hover,
+html.dark .hover\:bg-\[\#E1F0FE\]:hover,
+html.dark .hover\:bg-\[\#DFEEFE\]:hover,
+html.dark .hover\:bg-\[\#D7ECFF\]:hover,
+html.dark .hover\:bg-\[\#D5ECFF\]:hover {
+  background-color: #274368;
+}
+
+/* Toast banner surface */
+html.dark .bg-\[\#1C3554\] {
+  background-color: #223B5B;
+  border: 1px solid #355882;
+}
+
+/* Hero, Auth & Placeholder gradients */
+html.dark .from-\[\#EAF5FF\],
+html.dark .from-\[\#E4F3FF\] {
+  --tw-gradient-from: #13253D var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(19 37 61 / 0) var(--tw-gradient-to-position);
+}
+
+html.dark .via-\[\#F4FAFF\],
+html.dark .via-\[\#F7FBFF\],
+html.dark .via-\[\#F8FBFF\] {
+  --tw-gradient-via: #101E32 var(--tw-gradient-via-position);
+}
+
+html.dark .to-\[\#F8FBFF\],
+html.dark .to-\[\#F3FAFF\],
+html.dark .to-\[\#FFFDF8\],
+html.dark .to-\[\#FFFDF9\] {
+  --tw-gradient-to: #0D1726 var(--tw-gradient-to-position);
+}
+
+/* Semantic Status & Alert Surfaces */
+html.dark .bg-\[\#FFF9EB\],
+html.dark .bg-\[\#FFF4DC\] {
+  background-color: #2A2212;
+}
+
+html.dark .bg-\[\#FCEBC2\] {
+  background-color: #3E3016;
+}
+
+html.dark .bg-\[\#EFE9FF\] {
+  background-color: #272042;
+}
+
+html.dark .bg-\[\#DFF6FA\] {
+  background-color: #132F38;
+}
+
+html.dark .bg-\[\#E1F7EA\],
+html.dark .bg-\[\#E4F6EC\],
+html.dark .bg-\[\#EAF7F0\],
+html.dark .bg-\[\#D2EFDF\] {
+  background-color: #143225;
+}
+
+html.dark .bg-\[\#FFF0F3\],
+html.dark .bg-\[\#FFF3F6\],
+html.dark .bg-\[\#FFF5F7\],
+html.dark .bg-\[\#FFEAF0\],
+html.dark .bg-\[\#FFE7EC\],
+html.dark .bg-\[\#FFE6EC\],
+html.dark .bg-\[\#FFE3EA\],
+html.dark .bg-\[\#FFE1E8\] {
+  background-color: #331722;
+}
+
+html.dark .hover\:bg-\[\#FFF0F3\]:hover,
+html.dark .hover\:bg-\[\#FFE6EC\]:hover,
+html.dark .hover\:bg-\[\#FFE3EA\]:hover,
+html.dark .hover\:bg-\[\#FFE1E8\]:hover {
+  background-color: #461E2E;
+}
+
+/* Borders & Dividers */
+html.dark .border-\[\#F0F6FC\],
+html.dark .border-\[\#EEF5FC\],
+html.dark .border-\[\#EDF5FD\],
+html.dark .border-\[\#EAF3FC\],
+html.dark .border-\[\#E9F3FC\],
+html.dark .border-\[\#E6F2FC\],
+html.dark .border-\[\#E6F1FC\],
+html.dark .border-\[\#E5F1FC\],
+html.dark .border-\[\#E4F0FB\],
+html.dark .border-\[\#E3F0FC\],
+html.dark .border-\[\#E2EFFB\],
+html.dark .border-\[\#E1EFFB\],
+html.dark .border-\[\#DFEEFB\],
+html.dark .border-\[\#DCECFB\],
+html.dark .border-\[\#D8EBFB\],
+html.dark .border-\[\#D8EBFA\],
+html.dark .border-\[\#D8EAFB\],
+html.dark .border-\[\#D7EBFC\],
+html.dark .border-\[\#D4E8FA\],
+html.dark .border-\[\#CFE6FA\],
+html.dark .border-\[\#BDE0FC\],
+html.dark .border-\[\#A7D3F7\] {
+  border-color: #263E5E;
+}
+
+html.dark .divide-\[\#EEF5FC\] > :not(:last-child),
+html.dark .divide-\[\#E4F0FB\] > :not(:last-child) {
+  border-color: #223855;
+}
+
+html.dark .border-\[\#F5DDA7\] {
+  border-color: #5C471F;
+}
+
+html.dark .border-\[\#F7C5D0\],
+html.dark .border-\[\#F7D7DF\],
+html.dark .border-\[\#F8C8D4\],
+html.dark .border-\[\#F9C6D3\],
+html.dark .border-\[\#FAD4DC\],
+html.dark .border-\[\#FAD5DF\] {
+  border-color: #6B2A3E;
+}
+
+html.dark .border-\[\#BEE5CE\] {
+  border-color: #235B40;
+}
+
+/* Primary & Secondary Ink Text */
+html.dark .text-\[\#1C3554\] {
+  color: #EDF5FF;
+}
+
+html.dark .text-\[\#2A496B\],
+html.dark .text-\[\#2C4C70\],
+html.dark .text-\[\#315072\],
+html.dark .text-\[\#426385\],
+html.dark .text-\[\#486687\],
+html.dark .text-\[\#4A688A\],
+html.dark .text-\[\#4B6889\],
+html.dark .text-\[\#4C6A8B\] {
+  color: #C2D7EE;
+}
+
+html.dark .text-\[\#52657A\],
+html.dark .text-\[\#547190\],
+html.dark .text-\[\#567394\],
+html.dark .text-\[\#6B89A8\],
+html.dark .text-\[\#7A95B2\],
+html.dark .text-\[\#839AB2\],
+html.dark .text-\[\#839BB2\],
+html.dark .text-\[\#849BB3\],
+html.dark .text-\[\#86A1BE\],
+html.dark .text-\[\#89A3BE\] {
+  color: #8EA9C7;
+}
+
+/* Brand Pastel Sky Accents on Dark */
+html.dark .text-\[\#1D5FA7\],
+html.dark .text-\[\#235F96\],
+html.dark .text-\[\#24639C\],
+html.dark .text-\[\#2F7CC0\],
+html.dark .text-\[\#3B89CC\] {
+  color: #77C2FA;
+}
+
+html.dark .hover\:text-\[\#2F7CC0\]:hover,
+html.dark .hover\:text-\[\#24639C\]:hover,
+html.dark .hover\:text-\[\#235F96\]:hover,
+html.dark .hover\:text-\[\#1C3554\]:hover {
+  color: #A8DBFF;
+}
+
+/* Semantic Status Text on Dark */
+html.dark .text-\[\#9A5B00\],
+html.dark .text-\[\#B45309\],
+html.dark .text-\[\#7C4A03\] {
+  color: #FAD37C;
+}
+
+html.dark .text-\[\#6E4506\] {
+  color: #F3DFB0;
+}
+
+html.dark .text-\[\#5B3FA6\] {
+  color: #C6B5FF;
+}
+
+html.dark .text-\[\#0E6E7C\] {
+  color: #7FE3F0;
+}
+
+html.dark .text-\[\#17693B\],
+html.dark .text-\[\#1E8E3E\] {
+  color: #7BE0A8;
+}
+
+html.dark .text-\[\#B4233C\],
+html.dark .text-\[\#C42746\],
+html.dark .text-\[\#D63653\] {
+  color: #FF94AB;
+}
+
+/* Inputs, Selects & Textareas in Dark Mode */
+html.dark input,
+html.dark textarea,
+html.dark select {
+  color: #EDF5FF;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #708CAE;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
